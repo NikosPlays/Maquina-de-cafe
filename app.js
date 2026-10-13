@@ -31,6 +31,28 @@ Salidas (let)
 Salida cafe/ Salida te. Indicar si se entrego
 Dar cambio, numero $
 
+
+
+
+Salida cafe/ Salida te. Indicar si se entrego
+let salidaCafe = false; 
+let salidaTe = false; 
+
+Dar cambio, numero $
+let darCambio = 0; 
+
+
+Reglas de negocio
+No acepta billetes de 1.000, 50.000, 100.000
+const rechazarBillete1 = 1000;
+const rechazarBillete2 = 50000;
+const rechazarBillete3 = 100000;
+
+
+
+
+
+
 Reglas de negocio
 No acepta billetes de 1.000, 50.000, 100.000
 Si el stock se acaba, no vende mas producto
