@@ -7,6 +7,31 @@ Leche; agua, numero. mililitros
 Vaso; numero. unidades
 Inventario monedas/inventario billetes, numero, unidades fisicas
 
+
+
+Entradas (let)
+let saldo = 0; // Nùmero $
+
+Cafe, azucar, te, numero. gramos
+let cafe = 1000; 
+let azucar = 1000;
+let te = 500;
+
+Leche, agua, numero. mililitros
+let leche = 3000; 
+let agua = 5000;
+
+Vaso, numero. unidades
+let vaso = 100; 
+
+Inventario monedas/inventario billetes, numero, unidades fisicas
+let inventarioMonedas = 50; 
+let inventarioBilletes = 20; 
+
+
+
+
+
 Salidas (let)
 Salida cafe/ Salida te. Indicar si se entrego
 Dar cambio, numero $
