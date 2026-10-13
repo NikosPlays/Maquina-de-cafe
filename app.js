@@ -65,3 +65,31 @@ Café Fuerte: 150ml agua + 10g café + 1 vaso.
 Café con Leche: 75ml agua + 75ml leche + 8g café + 1 vaso.
 Capuchino: 50ml agua + 100ml leche + 8g café + 1 vaso.
 Té: 150ml agua + 5g té + 1 vaso.
+
+
+
+
+
+
+Café Suave: 150ml agua + 5g café + 1 vaso.
+const suaveAgua = 150;
+const suaveCafe = 5;
+
+Café Fuerte: 150ml agua + 10g café + 1 vaso.
+const fuerteAgua = 150;
+const fuerteCafe = 10;
+
+Café con Leche: 75ml agua + 75ml leche + 8g café + 1 vaso.
+const lecheAgua = 75;
+const lecheCantidad = 75;
+const lecheCafe = 8;
+
+
+Capuchino: 50ml agua + 100ml leche + 8g café + 1 vaso.
+const capuAgua = 50;
+const capuLeche = 100;
+const capuCafe = 8;
+
+Té: 150ml agua + 5g té + 1 vaso.
+const teAgua = 150;
+const teGramos = 5;
