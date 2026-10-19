@@ -92,3 +92,9 @@ const capuCafe = 8;
 Té: 150ml agua + 5g té + 1 vaso.
 const teAgua = 150;
 const teGramos = 5;
+
+
+
+// Ingreso de billete de cada cliente
+let billeteIngresado = 2000;
+let saldoCliente = 2000;
