@@ -103,3 +103,6 @@ let saldoCliente = 2000;
 // Valida si el billete ingresado es exactamente el billete de la regla de negocio que no esta permitido
 let esBilleteRechazado = billeteIngresado === noAcepta1000;
 
+
+// Valida si el saldo actual es diferente de cero (para saber si ya hay dinero ingresado)
+let maquinaConSaldo = saldo != 0;
