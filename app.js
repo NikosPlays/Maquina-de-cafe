@@ -114,3 +114,12 @@ let faltaAguaParaSuave = agua < suaveAgua;
 
 // Verifica si el saldo que hay es suficiente para comprar un Capuchino (Supongamos que vale 2500)
 let alcanzaParaCapuchino = saldo >= 2500;
+
+
+// Activa una alerta en pantalla si quedan 5 vasos o menos
+let alertaPocosVasos = vaso <= 5;
+
+
+// Menú es digital y el cliente presiona el botón "1" (String)
+let botonPresionado = "1";
+let seleccionoSuave = botonPresionado == 1;
