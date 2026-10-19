@@ -106,3 +106,7 @@ let esBilleteRechazado = billeteIngresado === noAcepta1000;
 
 // Valida si el saldo actual es diferente de cero (para saber si ya hay dinero ingresado)
 let maquinaConSaldo = saldo != 0;
+
+
+// Verifica si el agua de la máquina es menor a la que pide la receta del Café Suave
+let faltaAguaParaSuave = agua < suaveAgua;
