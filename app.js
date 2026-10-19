@@ -98,3 +98,8 @@ const teGramos = 5;
 // Ingreso de billete de cada cliente
 let billeteIngresado = 2000;
 let saldoCliente = 2000;
+
+
+// Valida si el billete ingresado es exactamente el billete de la regla de negocio que no esta permitido
+let esBilleteRechazado = billeteIngresado === noAcepta1000;
+
