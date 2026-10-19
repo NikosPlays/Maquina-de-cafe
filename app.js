@@ -169,3 +169,13 @@ if (opcionSeleccionada == "Capuchino") {
     salidaCafe = true;              // Activa la salida de café
     console.log("Preparando Capuchino...");
 }
+
+
+// TÉ 
+if (opcionSeleccionada == "Te") {
+    agua = agua - teAgua;          // Resta 150 ml de agua
+    te = te - teGramos;            // Resta 5g de té
+    vaso = vaso - 1;               // Resta 1 vaso
+    salidaTe = true;               // Activa la salida de té
+    console.log("Preparando Té Caliente...");
+}
