@@ -138,3 +138,13 @@ if (opcionSeleccionada == "Cafe Suave") {
     salidaCafe = true;             // Activa la salida de café
     console.log("Preparando Café Suave...");
     }
+    
+
+// CAFÉ FUERTE 
+if (opcionSeleccionada == "Cafe Fuerte") {
+    agua = agua - fuerteAgua;      // Resta 150 ml de agua
+    cafe = cafe - fuerteCafe;      // Resta 10g de café
+    vaso = vaso - 1;               // Resta 1 vaso
+    salidaCafe = true;             // Activa la salida de café
+    console.log("Preparando Café Fuerte...");
+}
