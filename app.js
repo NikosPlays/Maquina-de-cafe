@@ -159,3 +159,13 @@ if (opcionSeleccionada == "Cafe con Leche") {
     salidaCafe = true;             // Activa la salida de café
     console.log("Preparando Café con Leche...");
 }
+
+// CAPUCHINO
+if (opcionSeleccionada == "Capuchino") {
+    agua = agua - capuAgua;         // Resta 50 ml de agua
+    leche = leche - capuLeche;     // Resta 100 ml de leche
+    cafe = cafe - capuCafe;         // Resta 8g de café
+    vaso = vaso - 1;                // Resta 1 vaso
+    salidaCafe = true;              // Activa la salida de café
+    console.log("Preparando Capuchino...");
+}
