@@ -110,3 +110,7 @@ let maquinaConSaldo = saldo != 0;
 
 // Verifica si el agua de la máquina es menor a la que pide la receta del Café Suave
 let faltaAguaParaSuave = agua < suaveAgua;
+
+
+// Verifica si el saldo que hay es suficiente para comprar un Capuchino (Supongamos que vale 2500)
+let alcanzaParaCapuchino = saldo >= 2500;
