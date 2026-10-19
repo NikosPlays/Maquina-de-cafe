@@ -123,3 +123,18 @@ let alertaPocosVasos = vaso <= 5;
 // Menú es digital y el cliente presiona el botón "1" (String)
 let botonPresionado = "1";
 let seleccionoSuave = botonPresionado == 1;
+
+
+
+
+//Productos con inventario (restas de inventario)
+
+
+// CAFÉ SUAVE 
+if (opcionSeleccionada == "Cafe Suave") {
+    agua = agua - suaveAgua;       // Resta 150 ml de agua
+    cafe = cafe - suaveCafe;       // Resta 5g de café
+    vaso = vaso - 1;               // Resta 1 vaso
+    salidaCafe = true;             // Activa la salida de café
+    console.log("Preparando Café Suave...");
+    }
