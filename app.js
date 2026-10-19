@@ -148,3 +148,14 @@ if (opcionSeleccionada == "Cafe Fuerte") {
     salidaCafe = true;             // Activa la salida de café
     console.log("Preparando Café Fuerte...");
 }
+
+
+// CAFÉ CON LECHE 
+if (opcionSeleccionada == "Cafe con Leche") {
+    agua = agua - lecheAgua;       // Resta 75 ml de agua
+    leche = leche - lecheCantidad; // Resta 75 ml de leche
+    cafe = cafe - lecheCafe;       // Resta 8g de café
+    vaso = vaso - 1;               // Resta 1 vaso
+    salidaCafe = true;             // Activa la salida de café
+    console.log("Preparando Café con Leche...");
+}
