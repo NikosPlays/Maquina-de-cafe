@@ -36,8 +36,6 @@ Salidas (let)
 Salida cafe/ Salida te. Indicar si se entrego
 Dar cambio, numero $
 
-Reglas de negocio
-No acepta billetes de 1.000, 50.000, 100.000
 
 
 
@@ -179,3 +177,6 @@ if (opcionSeleccionada == "Te") {
     salidaTe = true;               // Activa la salida de té
     console.log("Preparando Té Caliente...");
 }
+
+if (saldo >= precioProducto)     
+
