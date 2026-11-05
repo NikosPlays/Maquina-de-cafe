@@ -29,8 +29,17 @@ let agua = 5000;
 let vaso = 100; 
 
 //Inventario monedas/inventario billetes, numero, unidades fisicas
-let inventarioMonedas = 50; 
-let inventarioBilletes = 20; 
+let inventarioMonedas100 = 50; 
+let inventarioMonedas200 = 50;
+let inventarioMonedas500 = 50;
+let inventarioMonedas1000 = 50;
+
+
+let inventarioBilletes2000 = 20; 
+let inventarioBilletes5000 = 20; 
+let inventarioBilletes10000 = 20; 
+let inventarioBilletes20000 = 20; 
+let inventarioBilletes50000 = 20; 
 
 if (cafe < 200 || leche < 500 || te < 200 || agua < 600 || vaso < 10 || azucar < 200) {
     // Mostrar mensaje de alerta:"Inventario bajo, por favor reabastecer maquina"
@@ -124,7 +133,8 @@ const teGramos = 5;
 
 
 // CAFÉ SUAVE 
-switch (opcionSeleccionada) {
+let menu = promt("Seleccione un producto del menú: Café Suave, Café Fuerte, Café con Leche, Capuchino, Té");
+switch (menu) {
     case "Cafe Suave":
         agua = agua - suaveAgua;       // Resta 150 ml de agua
         cafe = cafe - suaveCafe;       // Resta 5g de café
