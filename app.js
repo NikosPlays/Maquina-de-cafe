@@ -7,7 +7,11 @@ Entradas (let)
 //Vaso; numero. unidades
 //Inventario monedas/inventario billetes, numero, unidades fisicas
 
-
+const precioCafeSuave = 2500;
+const precioCafeFuerte = 3000;
+const precioCafeConLeche = 3200;
+const precioCapuchino = 5000;
+const precioTe = 2000;
 
 Entradas (let)
 let saldo = 0; // Nùmero $
