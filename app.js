@@ -142,53 +142,60 @@ let seleccionoSuave = botonPresionado == 1;
 
 
 // CAFÉ SUAVE 
-if (opcionSeleccionada == "Cafe Suave") {
-    agua = agua - suaveAgua;       // Resta 150 ml de agua
-    cafe = cafe - suaveCafe;       // Resta 5g de café
-    vaso--;               // Resta 1 vaso
-    salidaCafe = true;             // Activa la salida de café
-    console.log("Preparando Café Suave...");
-    }
+switch (opcionSeleccionada) {
+    case "Cafe Suave":
+        agua = agua - suaveAgua;       // Resta 150 ml de agua
+        cafe = cafe - suaveCafe;       // Resta 5g de café
+        vaso--;               // Resta 1 vaso
+        salidaCafe = true;             // Activa la salida de café
+        console.log("Preparando Café Suave...");
+        break;
+    
+    // CAFÉ FUERTE 
+
+    case "Cafe Fuerte":
+        agua = agua - fuerteAgua;      // Resta 150 ml de agua
+        cafe = cafe - fuerteCafe;      // Resta 10g de café
+        vaso--;               // Resta 1 vaso
+        salidaCafe = true;             // Activa la salida de café
+        console.log("Preparando Café Fuerte...");
+        break;
     
 
-// CAFÉ FUERTE 
-if (opcionSeleccionada == "Cafe Fuerte") {
-    agua = agua - fuerteAgua;      // Resta 150 ml de agua
-    cafe = cafe - fuerteCafe;      // Resta 10g de café
-    vaso--;               // Resta 1 vaso
-    salidaCafe = true;             // Activa la salida de café
-    console.log("Preparando Café Fuerte...");
-}
+    // CAFÉ CON LECHE 
 
-
-// CAFÉ CON LECHE 
-if (opcionSeleccionada == "Cafe con Leche") {
-    agua = agua - lecheAgua;       // Resta 75 ml de agua
-    leche = leche - lecheCantidad; // Resta 75 ml de leche
-    cafe = cafe - lecheCafe;       // Resta 8g de café
-    vaso--;               // Resta 1 vaso
-    salidaCafe = true;             // Activa la salida de café
+    case "Cafe con Leche":
+        agua = agua - lecheAgua;       // Resta 75 ml de agua
+        leche = leche - lecheCantidad; // Resta 75 ml de leche
+        cafe = cafe - lecheCafe;       // Resta 8g de café
+        vaso--;               // Resta 1 vaso
+        salidaCafe = true;             // Activa la salida de café
     console.log("Preparando Café con Leche...");
-}
+        break;
+    
+        // CAPUCHINO
 
-// CAPUCHINO
-if (opcionSeleccionada == "Capuchino") {
-    agua = agua - capuAgua;         // Resta 50 ml de agua
-    leche = leche - capuLeche;     // Resta 100 ml de leche
-    cafe = cafe - capuCafe;         // Resta 8g de café
-    vaso--;                // Resta 1 vaso
-    salidaCafe = true;              // Activa la salida de café
+    case "Capuchino":
+        agua = agua - capuAgua;         // Resta 50 ml de agua
+        leche = leche - capuLeche;     // Resta 100 ml de leche
+        cafe = cafe - capuCafe;         // Resta 8g de café
+        vaso--;                // Resta 1 vaso
+        salidaCafe = true;              // Activa la salida de café
     console.log("Preparando Capuchino...");
-}
+    break;
+    
+    // TÉ 
 
-
-// TÉ 
-if (opcionSeleccionada == "Te") {
-    agua = agua - teAgua;          // Resta 150 ml de agua
-    te = te - teGramos;            // Resta 5g de té
-    vaso--;               // Resta 1 vaso
-    salidaTe = true;               // Activa la salida de té
+    case "Te":
+        agua = agua - teAgua;          // Resta 150 ml de agua
+        te = te - teGramos;            // Resta 5g de té
+        vaso--;               // Resta 1 vaso
+        salidaTe = true;               // Activa la salida de té
     console.log("Preparando Té Caliente...");
+    break;
+    default:
+        console.log("Opción no válida. Por favor, seleccione un producto del menú.");
+        break;
 }
 
-if (saldo >= precioProducto)     
+ 
