@@ -120,28 +120,6 @@ const teGramos = 5;
 
 
 
-// Ingreso de billete de cada cliente
-let billeteIngresado = 2000;
-let saldoCliente = 2000;
-
-
-// Valida si el saldo actual es diferente de cero (para saber si ya hay dinero ingresado)
-let maquinaConSaldo = saldo != 0;
-
-
-// Verifica si el saldo que hay es suficiente para comprar un Capuchino (Supongamos que vale 2500)
-let alcanzaParaCapuchino = saldo >= 2500;
-
-
-
-
-// Menú es digital y el cliente presiona el botón "1" (String)
-let botonPresionado = "1";
-let seleccionoSuave = botonPresionado == 1;
-
-
-
-
 //Productos con inventario (restas de inventario)
 
 
