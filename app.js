@@ -121,24 +121,14 @@ let billeteIngresado = 2000;
 let saldoCliente = 2000;
 
 
-// Valida si el billete ingresado es exactamente el billete de la regla de negocio que no esta permitido
-let esBilleteRechazado = billeteIngresado === noAcepta1000;
-
-
 // Valida si el saldo actual es diferente de cero (para saber si ya hay dinero ingresado)
 let maquinaConSaldo = saldo != 0;
-
-
-// Verifica si el agua de la máquina es menor a la que pide la receta del Café Suave
-let faltaAguaParaSuave = agua < suaveAgua;
 
 
 // Verifica si el saldo que hay es suficiente para comprar un Capuchino (Supongamos que vale 2500)
 let alcanzaParaCapuchino = saldo >= 2500;
 
 
-// Activa una alerta en pantalla si quedan 5 vasos o menos
-let alertaPocosVasos = vaso <= 5;
 
 
 // Menú es digital y el cliente presiona el botón "1" (String)
