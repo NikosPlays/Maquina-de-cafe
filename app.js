@@ -80,17 +80,40 @@ const rechazarBillete1 = 1000;
 const rechazarBillete2 = 50000;
 const rechazarBillete3 = 100000;
 
-if (billeteIngresado === rechazarBillete1 || billeteIngresado === rechazarBillete2 || billeteIngresado === rechazarBillete3) {
-    console.log("Billete rechazado. Por favor, inserte otro billete.");
-}   
+const rechazarMoneda1 = 50;
 
-    else {
-    console.log("Billete aceptado.");}
+
+function insertarBillete() {
+    let billeteValido = false; // Controla si el ciclo sigue o se detiene
+    let billeteIngresado;
+
+    dowhile (billeteValido === true) {
+        // Se pide el billete DENTRO del while para que vuelva a preguntar si falla
+        billeteIngresado = parseInt(prompt("Ingrese el billete o moneda (sin puntos):"));
+
+        if (isNaN(billeteIngresado) || billeteIngresado <= 0) {
+            alert("Por favor, ingrese un número válido.");
+        } 
+        else if (
+            billeteIngresado === rechazarBillete1 || 
+            billeteIngresado === rechazarBillete2 || 
+            billeteIngresado === rechazarBillete3 || 
+            billeteIngresado === rechazarMoneda1
+        ) {
+            alert("Denominación rechazada ($" + billeteIngresado + "). Intente con otro billete o moneda.");
+            // Como billeteValido sigue siendo false, el while vuelve a empezar
+        } 
+        else {
+            alert("Dinero aceptado: $" + billeteIngresado);
+            billeteValido = true; // Cambia a true y rompe el ciclo while
+        }
+    }
     
+    
+}
 
-
-
-
+// Llamar a la función
+insertarBillete();
 
 //Productos
 //Café Suave: 150ml agua + 5g café + 1 vaso.
