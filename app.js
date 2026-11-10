@@ -156,7 +156,7 @@ const teGramos = 5;
 
 
 // CAFÉ SUAVE 
-let menu = promt("Seleccione un producto del menú: Café Suave, Café Fuerte, Café con Leche, Capuchino, Té");
+let menu =parseInt(prompt("Seleccione un producto del menú: Café Suave, Café Fuerte, Café con Leche, Capuchino, Té"));
 switch (menu) {
     case "Cafe Suave":
         agua = agua - suaveAgua;       // Resta 150 ml de agua
