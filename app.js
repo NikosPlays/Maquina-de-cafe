@@ -87,9 +87,9 @@ function insertarBillete() {
     let billeteValido = false; // Controla si el ciclo sigue o se detiene
     let billeteIngresado;
 
-    dowhile (billeteValido === true) {
+    while (billeteValido === false) {
         // Se pide el billete DENTRO del while para que vuelva a preguntar si falla
-        billeteIngresado = parseInt(prompt("Ingrese el billete o moneda (sin puntos):"));
+        billeteIngresado = parseInt(prompt("Ingrese el billete o moneda:"));
 
         if (isNaN(billeteIngresado) || billeteIngresado <= 0) {
             alert("Por favor, ingrese un número válido.");
@@ -108,7 +108,7 @@ function insertarBillete() {
             billeteValido = true; // Cambia a true y rompe el ciclo while
         }
     }
-    
+
     
 }
 
