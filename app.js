@@ -1,6 +1,6 @@
-//# Maquina-de-cafe
+// Maquina-de-cafe
 
-Entradas (let)
+
 //Saldo; Nùmero $
 //Cafe;, azucar, te, numero. gramos
 //Leche; agua, numero. mililitros
@@ -13,7 +13,7 @@ const precioCafeConLeche = 3200;
 const precioCapuchino = 5000;
 const precioTe = 2000;
 
-Entradas (let)
+
 let saldo = 0; // Nùmero $
 
 //Cafe, azucar, te, numero. gramos
@@ -60,7 +60,7 @@ if (cafe < 200 || leche < 500 || te < 200 || agua < 600 || vaso < 10 || azucar <
     
 }
 
-Salidas (let)
+
 //Salida cafe/ Salida te. Indicar si se entrego
 //Dar cambio, numero $
 
@@ -157,6 +157,7 @@ switch (menu) {
     // CAFÉ CON LECHE 
 
     case "Cafe con Leche":
+        
         agua = agua - lecheAgua;       // Resta 75 ml de agua
         leche = leche - lecheCantidad; // Resta 75 ml de leche
         cafe = cafe - lecheCafe;       // Resta 8g de café
