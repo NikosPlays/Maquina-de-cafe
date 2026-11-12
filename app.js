@@ -169,14 +169,24 @@ function seleccionarBebida() {
         );
         // Convertimos a minúsculas y quitamos espacios extra para evitar errores al escribir
         let seleccion = menu.trim().toLowerCase();
-    switch (seleccion) {
-    case "Cafe Suave":
-        agua = agua - suaveAgua;       // Resta 150 ml de agua
-        cafe = cafe - suaveCafe;       // Resta 5g de café
-        vaso--;               // Resta 1 vaso
-        salidaCafe = true;             // Activa la salida de café
-        console.log("Preparando Café Suave...");
-        break;
+
+        // Validamos la selección del usuario
+   switch (seleccion) {
+            case "1":
+            case "cafe suave":
+            case "café suave":
+                if (saldo >= precioCafeSuave) {
+                    agua -= suaveAgua;
+                    cafe -= suaveCafe;
+                    vaso--;
+                    salidaCafe = true;
+                    darCambio = saldo - precioCafeSuave;
+                    alert("☕ Preparando Café Suave...\n¡Bebida entregada!\nSu cambio es: $" + darCambio);
+                } else {
+                    alert("Saldo insuficiente para Café Suave ($2500). Su saldo es: $" + saldo);
+                }
+                opcionValida = true;
+                break;
     
     // CAFÉ FUERTE 
 
