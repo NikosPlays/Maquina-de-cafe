@@ -152,11 +152,21 @@ const teGramos = 5;
 
 
 
-//Productos con inventario (restas de inventario)
+function seleccionarBebida() {
+    let opcionValida = false;
 
-
-// CAFÉ SUAVE 
-let menu =parseInt(prompt("Seleccione un producto del menú: Café Suave, Café Fuerte, Café con Leche, Capuchino, Té"));
+    // Usamos do...while para que pida el producto hasta que el usuario escriba uno que exista
+    do {
+        // Quitamos el parseInt() para poder leer texto o números
+        let menu = prompt(
+            "Saldo actual: $" + saldo + "\n\n" +
+            "Seleccione un producto (escriba el número o el nombre):\n" +
+            "1. Cafe Suave ($2500)\n" +
+            "2. Cafe Fuerte ($3000)\n" +
+            "3. Cafe con Leche ($3200)\n" +
+            "4. Capuchino ($5000)\n" +
+            "5. Te ($2000)"
+        );
 switch (menu) {
     case "Cafe Suave":
         agua = agua - suaveAgua;       // Resta 150 ml de agua
@@ -212,6 +222,7 @@ switch (menu) {
     default:
         console.log("Opción no válida. Por favor, seleccione un producto del menú.");
         break;
+}
 }
 
  
