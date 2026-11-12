@@ -167,7 +167,9 @@ function seleccionarBebida() {
             "4. Capuchino ($5000)\n" +
             "5. Te ($2000)"
         );
-switch (menu) {
+        // Convertimos a minúsculas y quitamos espacios extra para evitar errores al escribir
+        let seleccion = menu.trim().toLowerCase();
+    switch (seleccion) {
     case "Cafe Suave":
         agua = agua - suaveAgua;       // Resta 150 ml de agua
         cafe = cafe - suaveCafe;       // Resta 5g de café
