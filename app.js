@@ -190,6 +190,28 @@ function insertarBillete() {
     return true;
 }
 
+    // 3. FUNCIÓN PARA SELECCIONAR BEBIDA
+
+    function seleccionarBebida() {
+    let opcionValida = false;
+
+    do {
+        let menu = prompt(
+            "Saldo actual: $" + saldo + "\n\n" +
+            "Seleccione un producto (escriba el número o el nombre):\n" +
+            "1. Cafe Suave ($2500)\n" +
+            "2. Cafe Fuerte ($3000)\n" +
+            "3. Cafe con Leche ($3200)\n" +
+            "4. Capuchino ($5000)\n" +
+            "5. Te ($2000)"
+        );
+
+        if (menu === null) {
+            alert("Operación cancelada. Devolviendo su dinero: $" + saldo);
+            return;
+        }
+
+        let seleccion = menu.trim().toLowerCase();
 
         // Validamos la selección del usuario
    switch (seleccion) {
