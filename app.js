@@ -152,9 +152,9 @@ const teGramos = 5;
 
 
 
-function seleccionarBebida() {
-    let opcionValida = false;
-
+function insertarBillete() {
+    let billeteValido = false;
+    let billeteIngresado;
     // Usamos do...while para que pida el producto hasta que el usuario escriba uno que exista
     do {
         // Quitamos el parseInt() para poder leer texto o números
