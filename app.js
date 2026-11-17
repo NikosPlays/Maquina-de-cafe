@@ -169,7 +169,26 @@ function insertarBillete() {
         billeteIngresado = parseInt(entrada);
 
 
+        if (isNaN(billeteIngresado) || billeteIngresado <= 0) {
+            alert("Por favor, ingrese un número válido.");
+        } 
+        else if (
+            billeteIngresado === rechazarBillete1 || 
+            billeteIngresado === rechazarBillete2 || 
+            billeteIngresado === rechazarBillete3 || 
+            billeteIngresado === rechazarMoneda1
+        ) {
+            alert("Denominación rechazada ($" + billeteIngresado + "). Intente con otro billete o moneda.");
+        } 
+        else {
+            saldo = billeteIngresado; // Guardamos el billete aceptado en la variable 'saldo'
+            alert("Dinero aceptado. Su saldo actual es: $" + saldo);
+            billeteValido = true;
+        }
+    } while (billeteValido === false);
 
+    return true;
+}
 
 
         // Validamos la selección del usuario
