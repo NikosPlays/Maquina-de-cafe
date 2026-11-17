@@ -173,8 +173,7 @@ function seleccionarBebida() {
         // Validamos la selección del usuario
    switch (seleccion) {
             case "1":
-            case "cafe suave":
-            case "café suave":
+            
                 if (saldo >= precioCafeSuave) {
                     agua -= suaveAgua;
                     cafe -= suaveCafe;
@@ -238,4 +237,3 @@ function seleccionarBebida() {
 }
 
  
-}
