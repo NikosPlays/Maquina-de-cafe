@@ -249,15 +249,21 @@ function insertarBillete() {
                 break;
     // CAFÉ CON LECHE 
 
-    case "Cafe con Leche":
+    case "3":
         
-        agua = agua - lecheAgua;       // Resta 75 ml de agua
-        leche = leche - lecheCantidad; // Resta 75 ml de leche
-        cafe = cafe - lecheCafe;       // Resta 8g de café
-        vaso--;               // Resta 1 vaso
-        salidaCafe = true;             // Activa la salida de café
-    console.log("Preparando Café con Leche...");
-        break;
+        if (saldo >= precioCafeLeche) {
+                    agua -= lecheAgua;
+                    leche -= lecheCantidad;
+                    cafe -= lecheCafe;
+                    vaso--;
+                    salidaCafe = true;
+                    darCambio = saldo - precioCafeLeche;
+                    alert("☕ Preparando Café con Leche...\n¡Bebida entregada!\nSu cambio es: $" + darCambio);
+                    opcionValida = true;
+                } else {
+                    alert("Saldo insuficiente para Café con Leche ($3200). Su saldo es: $" + saldo + ".\nElija una bebida más económica o cancele.");
+                }
+                break;
     
         // CAPUCHINO
 
