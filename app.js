@@ -284,17 +284,24 @@ function insertarBillete() {
     
     // TÉ 
 
-    case "Te":
-        agua = agua - teAgua;          // Resta 150 ml de agua
-        te = te - teGramos;            // Resta 5g de té
-        vaso--;               // Resta 1 vaso
-        salidaTe = true;               // Activa la salida de té
-    console.log("Preparando Té Caliente...");
-    break;
-    default:
-        console.log("Opción no válida. Por favor, seleccione un producto del menú.");
-        break;
-}
-}
+    case "5":
+        if (saldo >= precioTe) {
+                    agua -= teAgua;
+                    te -= teGramos;
+                    vaso--;
+                    salidaTe = true;
+                    darCambio = saldo - precioTe;
+                    alert("🍵 Preparando Té Caliente...\n¡Bebida entregada!\nSu cambio es: $" + darCambio);
+                    opcionValida = true;
+                } else {
+                    alert("Saldo insuficiente para Té ($2000). Su saldo es: $" + saldo + ".\nElija una bebida más económica o cancele.");
+                }
+                break;
 
+            default:
+                alert("Opción no válida. Escriba un número del 1 al 5.");
+                break;
+        }
+    } while (opcionValida === false);
+}
  
