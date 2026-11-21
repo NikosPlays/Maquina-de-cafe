@@ -305,3 +305,8 @@ function insertarBillete() {
     } while (opcionValida === false);
 }
  
+
+// Primero pide el billete, y si fue válido, abre el menú de bebidas
+if (insertarBillete()) {
+    seleccionarBebida();
+}
