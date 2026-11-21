@@ -213,6 +213,8 @@ function insertarBillete() {
 
         let seleccion = menu.trim().toLowerCase();
 
+        
+
         // Validamos la selección del usuario
    switch (seleccion) {
             case "1":
