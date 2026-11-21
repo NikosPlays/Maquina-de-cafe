@@ -267,14 +267,20 @@ function insertarBillete() {
     
         // CAPUCHINO
 
-    case "Capuchino":
-        agua = agua - capuAgua;         // Resta 50 ml de agua
-        leche = leche - capuLeche;     // Resta 100 ml de leche
-        cafe = cafe - capuCafe;         // Resta 8g de café
-        vaso--;                // Resta 1 vaso
-        salidaCafe = true;              // Activa la salida de café
-    console.log("Preparando Capuchino...");
-    break;
+    case "4":
+        if (saldo >= precioCapuchino) {
+                    agua -= capuAgua;
+                    leche -= capuLeche;
+                    cafe -= capuCafe;
+                    vaso--;
+                    salidaCafe = true;
+                    darCambio = saldo - precioCapuchino;
+                    alert("☕ Preparando Capuchino...\n¡Bebida entregada!\nSu cambio es: $" + darCambio);
+                    opcionValida = true;
+                } else {
+                    alert("Saldo insuficiente para Capuchino ($5000). Su saldo es: $" + saldo + ".\nElija una bebida más económica o cancele.");
+                }
+                break;
     
     // TÉ 
 
