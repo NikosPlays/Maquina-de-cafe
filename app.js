@@ -234,15 +234,19 @@ function insertarBillete() {
     
     // CAFÉ FUERTE 
 
-    case "Cafe Fuerte":
-        agua = agua - fuerteAgua;      // Resta 150 ml de agua
-        cafe = cafe - fuerteCafe;      // Resta 10g de café
-        vaso--;               // Resta 1 vaso
-        salidaCafe = true;             // Activa la salida de café
-        console.log("Preparando Café Fuerte...");
-        break;
-    
-
+    case "2":
+       if (saldo >= precioCafeFuerte) {
+                    agua -= fuerteAgua;
+                    cafe -= fuerteCafe;
+                    vaso--;
+                    salidaCafe = true;
+                    darCambio = saldo - precioCafeFuerte;
+                    alert("☕ Preparando Café Fuerte...\n¡Bebida entregada!\nSu cambio es: $" + darCambio);
+                    opcionValida = true;
+                } else {
+                    alert("Saldo insuficiente para Café Fuerte ($3000). Su saldo es: $" + saldo + ".\nElija una bebida más económica o cancele.");
+                }
+                break;
     // CAFÉ CON LECHE 
 
     case "Cafe con Leche":
