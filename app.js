@@ -153,22 +153,7 @@ formSaldo.addEventListener("submit", function (event) {
   inputSaldo.value = "";
 });
 
-actualizarSaldo();
 
-    while (billeteValido === false) {
-        // Se pide el billete DENTRO del while para que vuelva a preguntar si falla
-        billeteIngresado = parseInt(prompt("Ingrese el billete o moneda:"));
-
-        if (isNaN(billeteIngresado) || billeteIngresado <= 0) {
-            alert("Por favor, ingrese un número válido.");
-        } 
-        
-
-    
-    }
-
-// Llamar a la función
-insertarBillete();
 
 
 function insertarBillete() {
