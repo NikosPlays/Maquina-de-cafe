@@ -314,7 +314,7 @@ body {
 /* ---------- Botón devolver cambio ---------- */
 .return {
   padding: 8px;
-  background: var(--gray-500);
+  background: var(--gray-600);
   color: var(--color-text-light);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-sm);
