@@ -112,6 +112,15 @@ const teAgua = 150;
 const teGramos = 5;
 
 
+// Agregar justo debajo del bloque anterior:
+const formSaldo = document.getElementById("balance-form");
+const inputSaldo = document.getElementById("balance-input");
+const pantallaSaldo = document.getElementById("credit");
+
+
+
+
+
 
 
 function insertarBillete() {
