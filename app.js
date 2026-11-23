@@ -153,189 +153,225 @@ formSaldo.addEventListener("submit", function (event) {
   inputSaldo.value = "";
 });
 
-actualizarSaldo();
+actualizarSaldo  ();
 
-    while (billeteValido === false) {
-        // Se pide el billete DENTRO del while para que vuelva a preguntar si falla
-        billeteIngresado = parseInt(prompt("Ingrese el billete o moneda:"));
-
-        if (isNaN(billeteIngresado) || billeteIngresado <= 0) {
-            alert("Por favor, ingrese un número válido.");
-        } 
-        
-
-    
-    }
-
-// Llamar a la función
-insertarBillete();
-
-//Productos
-//Café Suave: 150ml agua + 5g café + 1 vaso.
-//Café Fuerte: 150ml agua + 10g café + 1 vaso.
-//Café con Leche: 75ml agua + 75ml leche + 8g café + 1 vaso.
-//Capuchino: 50ml agua + 100ml leche + 8g café + 1 vaso.
-//Té: 150ml agua + 5g té + 1 vaso.
+const bandejaDispensador = document.getElementById("dispenser");
+const botonesBebida = document.querySelectorAll("[data-select]");
 
 
 
 
 
-function insertarBillete() {
-    let billeteValido = false;
-    let billeteIngresado;
-
-    
-    do {
-        let entrada = prompt("Ingrese el billete o moneda (ej: 2000, 5000, 10000, 20000):");
-        
-        // Si el usuario presiona Cancelar
-        if (entrada === null) {
-            alert("Operación cancelada.");
-            return false;
-        }
-
-        billeteIngresado = parseInt(entrada);
 
 
-        if (isNaN(billeteIngresado) || billeteIngresado <= 0) {
-            alert("Por favor, ingrese un número válido.");
-        } 
-        else if (
-            billeteIngresado === rechazarBillete1 || 
-            billeteIngresado === rechazarBillete2 || 
-            billeteIngresado === rechazarBillete3 || 
-            billeteIngresado === rechazarMoneda1
-        ) {
-            alert("Denominación rechazada ($" + billeteIngresado + "). Intente con otro billete o moneda.");
-        } 
-        else {
-            saldo = billeteIngresado; // Guardamos el billete aceptado en la variable 'saldo'
-            alert("Dinero aceptado. Su saldo actual es: $" + saldo);
-            billeteValido = true;
-        }
-    } while (billeteValido === false);
 
-    return true;
-}
 
-    // 3. FUNCIÓN PARA SELECCIONAR BEBIDA
 
-    function seleccionarBebida() {
-    let opcionValida = false;
-
-    do {
-        let menu = prompt(
-            "Saldo actual: $" + saldo + "\n\n" +
-            "Seleccione un producto (escriba el número o el nombre):\n" +
-            "1. Cafe Suave ($2500)\n" +
-            "2. Cafe Fuerte ($3000)\n" +
-            "3. Cafe con Leche ($3200)\n" +
-            "4. Capuchino ($5000)\n" +
-            "5. Te ($2000)"
-        );
-
-        if (menu === null) {
-            alert("Operación cancelada. Devolviendo su dinero: $" + saldo);
-            return;
-        }
-
-        let seleccion = menu.trim().toLowerCase();
-
-        
-
-        // Validamos la selección del usuario
+function seleccionarBebida(seleccion) {
    switch (seleccion) {
             case "1":
             
-                if (saldo >= precioCafeSuave) {
-                    agua -= suaveAgua;
-                    cafe -= suaveCafe;
+                if (saldo >= precioCafeSuave && agua >= suaveAgua && cafe >= suaveCafe && vaso > 0) {
+                    agua = agua - suaveAgua;
+                    cafe = cafe - suaveCafe;
                     vaso--;
                     salidaCafe = true;
                     darCambio = saldo - precioCafeSuave;
-                    alert("☕ Preparando Café Suave...\n¡Bebida entregada!\nSu cambio es: $" + darCambio);
+                    saldo= 0;
+                    alert("Preparando Cafe Suave... Su cambio es: $" + darCambio);
                 } else {
-                    alert("Saldo insuficiente para Café Suave ($2500). Su saldo es: $" + saldo);
+                    alert("Saldo insuficiente o falta inventario para Cafe Suave.");
                 }
-                opcionValida = true;
                 break;
     
     // CAFÉ FUERTE 
 
-    case "2":
-       if (saldo >= precioCafeFuerte) {
-                    agua -= fuerteAgua;
-                    cafe -= fuerteCafe;
-                    vaso--;
-                    salidaCafe = true;
-                    darCambio = saldo - precioCafeFuerte;
-                    alert("☕ Preparando Café Fuerte...\n¡Bebida entregada!\nSu cambio es: $" + darCambio);
-                    opcionValida = true;
-                } else {
-                    alert("Saldo insuficiente para Café Fuerte ($3000). Su saldo es: $" + saldo + ".\nElija una bebida más económica o cancele.");
-                }
-                break;
+            case "2":
+                if (saldo >= precioCafeFuerte && agua >= fuerteAgua && cafe >= fuerteCafe && vaso > 0) {
+                agua = agua - fuerteAgua;
+                cafe = cafe - fuerteCafe;
+                vaso--;
+                salidaCafe = true;
+                darCambio = saldo - precioCafeFuerte;
+                saldo = 0;
+                actualizarSaldo();
+                bandejaDispensador.textContent = "Cafe Fuerte";
+                alert("Preparando Cafe Fuerte... Su cambio es: $" + darCambio);
+            } else {
+                alert("Saldo insuficiente o falta inventario para Cafe Fuerte.");
+            }
+            break;
+
     // CAFÉ CON LECHE 
 
-    case "3":
-        
-        if (saldo >= precioCafeLeche) {
-                    agua -= lecheAgua;
-                    leche -= lecheCantidad;
-                    cafe -= lecheCafe;
-                    vaso--;
-                    salidaCafe = true;
-                    darCambio = saldo - precioCafeLeche;
-                    alert("☕ Preparando Café con Leche...\n¡Bebida entregada!\nSu cambio es: $" + darCambio);
-                    opcionValida = true;
-                } else {
-                    alert("Saldo insuficiente para Café con Leche ($3200). Su saldo es: $" + saldo + ".\nElija una bebida más económica o cancele.");
-                }
-                break;
+            case "3":
+            if (saldo >= precioCafeConLeche && agua >= lecheAgua && leche >= lecheCantidad && cafe >= lecheCafe && vaso > 0) {
+                agua = agua - lecheAgua;
+                leche = leche - lecheCantidad;
+                cafe = cafe - lecheCafe;
+                vaso--;
+                salidaCafe = true;
+                darCambio = saldo - precioCafeConLeche;
+                saldo = 0;
+                actualizarSaldo();
+                bandejaDispensador.textContent = "Cafe con Leche";
+                alert("Preparando Cafe con Leche... Su cambio es: $" + darCambio);
+            } else {
+                alert("Saldo insuficiente o falta inventario para Cafe con Leche.");
+            }
+            break;
     
         // CAPUCHINO
 
-    case "4":
-        if (saldo >= precioCapuchino) {
-                    agua -= capuAgua;
-                    leche -= capuLeche;
-                    cafe -= capuCafe;
-                    vaso--;
-                    salidaCafe = true;
-                    darCambio = saldo - precioCapuchino;
-                    alert("☕ Preparando Capuchino...\n¡Bebida entregada!\nSu cambio es: $" + darCambio);
-                    opcionValida = true;
-                } else {
-                    alert("Saldo insuficiente para Capuchino ($5000). Su saldo es: $" + saldo + ".\nElija una bebida más económica o cancele.");
-                }
-                break;
+            case "4":
+            if (saldo >= precioCapuchino && agua >= capuAgua && leche >= capuLeche && cafe >= capuCafe && vaso > 0 ) {
+                agua = agua - capuAgua;
+                leche = leche - capuLeche;
+                cafe = cafe - capuCafe;
+                vaso--;
+                salidaCafe = true;
+                darCambio = saldo - precioCapuchino;
+                saldo = 0;
+                actualizarSaldo();
+                bandejaDispensador.textContent = "Capuchino";
+                alert("Preparando Capuchino... Su cambio es: $" + darCambio);
+            } else {
+                alert("Saldo insuficiente o falta inventario para Capuchino.");
+            }
+            break;
     
     // TÉ 
 
-    case "5":
-        if (saldo >= precioTe) {
-                    agua -= teAgua;
-                    te -= teGramos;
-                    vaso--;
-                    salidaTe = true;
-                    darCambio = saldo - precioTe;
-                    alert("🍵 Preparando Té Caliente...\n¡Bebida entregada!\nSu cambio es: $" + darCambio);
-                    opcionValida = true;
-                } else {
-                    alert("Saldo insuficiente para Té ($2000). Su saldo es: $" + saldo + ".\nElija una bebida más económica o cancele.");
-                }
-                break;
+            case "5":
+            if (saldo >= precioTe && agua >= teAgua && te >= teGramos && vaso > 0) {
+                agua = agua - teAgua;
+                te = te - teGramos;
+                vaso--;
+                salidaTe = true;
+                darCambio = saldo - precioTe;
+                saldo = 0;
+                actualizarSaldo();
+                bandejaDispensador.textContent = "Te";
+                alert("Preparando Te... Su cambio es: $" + darCambio);
+            } else {
+                alert("Saldo insuficiente o falta inventario para Te.");
+            }
+            break;
 
             default:
-                alert("Opción no válida. Escriba un número del 1 al 5.");
-                break;
+            alert("Opción no válida.");
+            break;
         }
-    } while (opcionValida === false);
-}
+        }
+
+        botonesBebida.forEach(function (boton) {
+        boton.addEventListener("click", function () {
+        seleccionarBebida(boton.dataset.select);
+         });
+    });
+
+
+    const salidaBilletes = document.getElementById("bill-output");
+    const salidaMonedas = document.getElementById("coin-output");
+    const botonDevolverCambio = document.querySelector('[data-action="return-change"]');
+    const botonCancelar = document.querySelector('[data-action="cancel"]');
  
 
-// Primero pide el billete, y si fue válido, abre el menú de bebidas
-if (insertarBillete()) {
-    seleccionarBebida();
+    function entregarCambio(cambio) {
+        if (cambio <= 0) {
+        salidaBilletes.textContent = "";
+        salidaMonedas.textContent = "";
+        return;
+    }
+
+    let restante = cambio;
+    let textoBilletes = "";
+    let textoMonedas = "";
+
+    while (restante >= 50000 && inventarioBilletes50000 > 0) {
+    restante = restante - 50000;
+    inventarioBilletes50000--;
+    textoBilletes = textoBilletes + "$50.000 ";
+  }
+
+    while (restante >= 20000 && inventarioBilletes20000 > 0) {
+    restante = restante - 20000;
+    inventarioBilletes20000--;
+    textoBilletes = textoBilletes + "$20.000 ";
+  }
+
+    while (restante >= 10000 && inventarioBilletes10000 > 0) {
+    restante = restante - 10000;
+    inventarioBilletes10000--;
+    textoBilletes = textoBilletes + "$10.000 ";
+  }
+
+    while (restante >= 5000 && inventarioBilletes5000 > 0) {
+    restante = restante - 5000;
+    inventarioBilletes5000--;
+    textoBilletes = textoBilletes + "$5.000 ";
+  }
+
+    while (restante >= 2000 && inventarioBilletes2000 > 0) {
+    restante = restante - 2000;
+    inventarioBilletes2000--;
+    textoBilletes = textoBilletes + "$2.000 ";
+  }
+
+    while (restante >= 1000 && inventarioMonedas1000 > 0) {
+    restante = restante - 1000;
+    inventarioMonedas1000--;
+    textoMonedas = textoMonedas + "$1.000 ";
+  }
+
+    while (restante >= 500 && inventarioMonedas500 > 0) {
+    restante = restante - 500;
+    inventarioMonedas500--;
+    textoMonedas = textoMonedas + "$500 ";
+  }
+
+    while (restante >= 200 && inventarioMonedas200 > 0) {
+    restante = restante - 200;
+    inventarioMonedas200--;
+    textoMonedas = textoMonedas + "$200 ";
+  }
+
+    while (restante >= 100 && inventarioMonedas100 > 0) {
+    restante = restante - 100;
+    inventarioMonedas100--;
+    textoMonedas = textoMonedas + "$100 ";
+  }
+
+    salidaBilletes.textContent = textoBilletes.trim();
+  salidaMonedas.textContent = textoMonedas.trim();
+
+  if (restante > 0) {
+    alert("Faltaron $" + restante + " de cambio por falta de dinero en la máquina.");
+  } else {
+    alert("Su cambio es: $" + cambio);
+  }
 }
+
+    botonDevolverCambio.addEventListener("click", function () {
+        if (saldo > 0) {
+            darCambio = saldo;
+            saldo = 0;
+            actualizarSaldo();
+            entregarCambio(darCambio);
+        } else {
+            alert("No hay saldo para devolver.");
+        }
+        });
+
+    botonCancelar.addEventListener("click", function () {
+        bandejaDispensador.textContent = "";
+        inputSaldo.value = "";
+        if (saldo > 0) {
+            darCambio = saldo;
+            saldo = 0;
+            actualizarSaldo();
+            entregarCambio(darCambio);
+        } else {
+            alert("Operación cancelada.");
+        }
+        });
