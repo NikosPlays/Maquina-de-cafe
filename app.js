@@ -124,10 +124,17 @@ function actualizarSaldo() {
 
 
 
+function insertarBillete(billeteIngresado) {
+  if (isNaN(billeteIngresado) || billeteIngresado <= 0) {
+    alert("Por favor, ingrese un número válido.");
+    return;
+  }
 
-function insertarBillete() {
-    let billeteValido = false; // Controla si el ciclo sigue o se detiene
-    let billeteIngresado;
+
+
+
+
+
 
     while (billeteValido === false) {
         // Se pide el billete DENTRO del while para que vuelva a preguntar si falla
