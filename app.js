@@ -204,15 +204,22 @@ function seleccionarBebida(seleccion) {
 
     // CAFÉ CON LECHE 
 
-    case "Cafe con Leche":
-        
-        agua = agua - lecheAgua;       // Resta 75 ml de agua
-        leche = leche - lecheCantidad; // Resta 75 ml de leche
-        cafe = cafe - lecheCafe;       // Resta 8g de café
-        vaso--;               // Resta 1 vaso
-        salidaCafe = true;             // Activa la salida de café
-    console.log("Preparando Café con Leche...");
-        break;
+            case "3":
+            if (saldo >= precioCafeConLeche && agua >= lecheAgua && leche >= lecheCantidad && cafe >= lecheCafe && vaso > 0) {
+                agua = agua - lecheAgua;
+                leche = leche - lecheCantidad;
+                cafe = cafe - lecheCafe;
+                vaso--;
+                salidaCafe = true;
+                darCambio = saldo - precioCafeConLeche;
+                saldo = 0;
+                actualizarSaldo();
+                bandejaDispensador.textContent = "Cafe con Leche";
+                alert("Preparando Cafe con Leche... Su cambio es: $" + darCambio);
+            } else {
+                alert("Saldo insuficiente o falta inventario para Cafe con Leche.");
+            }
+            break;
     
         // CAPUCHINO
 
