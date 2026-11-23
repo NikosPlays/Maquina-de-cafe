@@ -50,16 +50,21 @@ if (cafe < 200 || leche < 500 || te < 200 || agua < 600 || vaso < 10 || azucar <
     console.log("Inventario suficiente.");
     }
 
-    if (inventarioMonedas100 < 10 || inventarioMonedas200 < 10 || inventarioMonedas500 < 10 || inventarioMonedas1000 < 10 || inventarioBilletes2000 < 10 || inventarioBilletes5000 < 10 || inventarioBilletes10000 < 10 || inventarioBilletes20000 < 10 || inventarioBilletes50000 < 10) {
-        // Mostrar mensaje de alerta:"Inventario de monedas o billetes bajo, por favor reabastecer maquina"
-        console.log("Inventario de monedas o billetes bajo, por favor reabastecer maquina");
-    } else {
-        // No mostrar mensaje de alerta
-        console.log("Inventario de monedas y billetes suficiente.");
-
-    
+    if (
+  inventarioMonedas100 < 10 ||
+  inventarioMonedas200 < 10 ||
+  inventarioMonedas500 < 10 ||
+  inventarioMonedas1000 < 10 ||
+  inventarioBilletes2000 < 10 ||
+  inventarioBilletes5000 < 10 ||
+  inventarioBilletes10000 < 10 ||
+  inventarioBilletes20000 < 10 ||
+  inventarioBilletes50000 < 10
+) {
+  console.log("Inventario de monedas o billetes bajo, por favor reabastecer maquina");
+} else {
+  console.log("Inventario de monedas y billetes suficiente.");
 }
-
 
 //Salida cafe/ Salida te. Indicar si se entrego
 //Dar cambio, numero $
@@ -81,6 +86,89 @@ const rechazarBillete2 = 50000;
 const rechazarBillete3 = 100000;
 
 const rechazarMoneda1 = 50;
+
+
+//Café Suave: 150ml agua + 5g café + 1 vaso.
+const suaveAgua = 150;
+const suaveCafe = 5;
+
+
+//Café Fuerte: 150ml agua + 10g café + 1 vaso.
+const fuerteAgua = 150;
+const fuerteCafe = 10;
+
+//Café con Leche: 75ml agua + 75ml leche + 8g café + 1 vaso.
+const lecheAgua = 75;
+const lecheCantidad = 75;
+const lecheCafe = 8;
+
+//Capuchino: 50ml agua + 100ml leche + 8g café + 1 vaso.
+const capuAgua = 50;
+const capuLeche = 100;
+const capuCafe = 8;
+
+//Té: 150ml agua + 5g té + 1 vaso.
+const teAgua = 150;
+const teGramos = 5;
+
+
+// Agregar justo debajo del bloque anterior:
+const formSaldo = document.getElementById("balance-form");
+const inputSaldo = document.getElementById("balance-input");
+const pantallaSaldo = document.getElementById("credit");
+
+function actualizarSaldo() {
+  pantallaSaldo.textContent = "$" + saldo;
+}
+
+
+
+
+function insertarBillete(billeteIngresado) {
+  if (isNaN(billeteIngresado) || billeteIngresado <= 0) {
+    alert("Por favor, ingrese un número válido.");
+    return;
+  }
+
+
+if (
+    billeteIngresado === rechazarBillete1 ||
+    billeteIngresado === rechazarBillete2 ||
+    billeteIngresado === rechazarBillete3 ||
+    billeteIngresado === rechazarMoneda1
+  ) {
+    alert("Denominación rechazada ($" + billeteIngresado + "). Intente con otro billete o moneda.");
+    return;
+  }
+
+saldo = saldo + billeteIngresado;
+  actualizarSaldo();
+  alert("Dinero aceptado: $" + billeteIngresado);
+}
+
+formSaldo.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let billeteIngresado = parseInt(inputSaldo.value);
+  insertarBillete(billeteIngresado);
+  inputSaldo.value = "";
+});
+
+actualizarSaldo();
+
+    while (billeteValido === false) {
+        // Se pide el billete DENTRO del while para que vuelva a preguntar si falla
+        billeteIngresado = parseInt(prompt("Ingrese el billete o moneda:"));
+
+        if (isNaN(billeteIngresado) || billeteIngresado <= 0) {
+            alert("Por favor, ingrese un número válido.");
+        } 
+        
+
+    
+    }
+
+// Llamar a la función
+insertarBillete();
 
 
 function insertarBillete() {
