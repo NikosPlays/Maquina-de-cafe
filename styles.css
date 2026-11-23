@@ -301,7 +301,7 @@ body {
   box-shadow: 0 4px 0 var(--gray-500);
   transition: transform 0.08s, box-shadow 0.08s, background 0.15s;
 }
-.key:hover  { background: var(--color-key-hover); }
+.key:hover  { background: var(--color-key-hover); color: var(--color-text-dark); }
 .key:active {
   background: var(--color-key-active);
   transform: translateY(3px);
