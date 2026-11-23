@@ -403,7 +403,7 @@ body {
   width: 18px;
   height: 14px;
   margin-bottom: -10px;
-  background: var(--gray-300);
+  background: var(--gray-400);
   border: 2px solid var(--color-border);
   border-radius: 0 0 6px 6px;
   position: relative;
