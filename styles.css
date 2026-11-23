@@ -307,13 +307,10 @@ body {
   transform: translateY(3px);
   box-shadow: 0 1px 0 var(--gray-500);
 }
-.cancel {
-  background: var(--gray-700);
+.cancel:hover {
+  background: var(--gray-600);
   color: var(--color-text-light);
-
-  .cancel:hover { background: var(--gray-600); }
 }
-
 /* ---------- Botón devolver cambio ---------- */
 .return {
   padding: 8px;
