@@ -171,17 +171,17 @@ function seleccionarBebida(seleccion) {
    switch (seleccion) {
             case "1":
             
-                if (saldo >= precioCafeSuave) {
-                    agua -= suaveAgua;
-                    cafe -= suaveCafe;
+                if (saldo >= precioCafeSuave && agua >= suaveAgua && cafe >= suaveCafe && vaso > 0) {
+                    agua = agua - suaveAgua;
+                    cafe = cafe - suaveCafe;
                     vaso--;
                     salidaCafe = true;
                     darCambio = saldo - precioCafeSuave;
-                    alert("☕ Preparando Café Suave...\n¡Bebida entregada!\nSu cambio es: $" + darCambio);
+                    saldo= 0;
+                    alert("Preparando Cafe Suave... Su cambio es: $" + darCambio);
                 } else {
-                    alert("Saldo insuficiente para Café Suave ($2500). Su saldo es: $" + saldo);
+                    alert("Saldo insuficiente o falta inventario para Cafe Suave.);
                 }
-                opcionValida = true;
                 break;
     
     // CAFÉ FUERTE 
