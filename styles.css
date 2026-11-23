@@ -275,7 +275,10 @@ body {
   cursor: pointer;
   box-shadow: 0 3px 0 var(--gray-600);
 }
-.balance-form__submit:hover  { background: var(--gray-100); }
+.balance-form__submit:hover  {
+  background: var(--gray-500);
+  color: var(--color-text-light);
+}
 .balance-form__submit:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--gray-600); }
 
 /* ---------- Teclado ---------- */
