@@ -50,16 +50,21 @@ if (cafe < 200 || leche < 500 || te < 200 || agua < 600 || vaso < 10 || azucar <
     console.log("Inventario suficiente.");
     }
 
-    if (inventarioMonedas100 < 10 || inventarioMonedas200 < 10 || inventarioMonedas500 < 10 || inventarioMonedas1000 < 10 || inventarioBilletes2000 < 10 || inventarioBilletes5000 < 10 || inventarioBilletes10000 < 10 || inventarioBilletes20000 < 10 || inventarioBilletes50000 < 10) {
-        // Mostrar mensaje de alerta:"Inventario de monedas o billetes bajo, por favor reabastecer maquina"
-        console.log("Inventario de monedas o billetes bajo, por favor reabastecer maquina");
-    } else {
-        // No mostrar mensaje de alerta
-        console.log("Inventario de monedas y billetes suficiente.");
-
-    
+    if (
+  inventarioMonedas100 < 10 ||
+  inventarioMonedas200 < 10 ||
+  inventarioMonedas500 < 10 ||
+  inventarioMonedas1000 < 10 ||
+  inventarioBilletes2000 < 10 ||
+  inventarioBilletes5000 < 10 ||
+  inventarioBilletes10000 < 10 ||
+  inventarioBilletes20000 < 10 ||
+  inventarioBilletes50000 < 10
+) {
+  console.log("Inventario de monedas o billetes bajo, por favor reabastecer maquina");
+} else {
+  console.log("Inventario de monedas y billetes suficiente.");
 }
-
 
 //Salida cafe/ Salida te. Indicar si se entrego
 //Dar cambio, numero $
