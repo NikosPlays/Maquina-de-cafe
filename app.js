@@ -269,4 +269,10 @@ function seleccionarBebida(seleccion) {
         seleccionarBebida(boton.dataset.select);
          });
     });
+
+
+    const salidaBilletes = document.getElementById("bill-output");
+    const salidaMonedas = document.getElementById("coin-output");
+    const botonDevolverCambio = document.querySelector('[data-action="return-change"]');
+     const botonCancelar = document.querySelector('[data-action="cancel"]');
  
