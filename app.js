@@ -117,7 +117,9 @@ const formSaldo = document.getElementById("balance-form");
 const inputSaldo = document.getElementById("balance-input");
 const pantallaSaldo = document.getElementById("credit");
 
-
+function actualizarSaldo() {
+  pantallaSaldo.textContent = "$" + saldo;
+}
 
 
 
