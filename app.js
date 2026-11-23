@@ -141,7 +141,10 @@ if (
     return;
   }
 
-
+saldo = saldo + billeteIngresado;
+  actualizarSaldo();
+  alert("Dinero aceptado: $" + billeteIngresado);
+}
 
 
     while (billeteValido === false) {
