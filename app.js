@@ -167,25 +167,7 @@ const botonesBebida = document.querySelectorAll("[data-select]");
 
 
 
-function seleccionarBebida() {
-    let opcionValida = false;
-
-    // Usamos do...while para que pida el producto hasta que el usuario escriba uno que exista
-    do {
-        // Quitamos el parseInt() para poder leer texto o números
-        let menu = prompt(
-            "Saldo actual: $" + saldo + "\n\n" +
-            "Seleccione un producto (escriba el número o el nombre):\n" +
-            "1. Cafe Suave ($2500)\n" +
-            "2. Cafe Fuerte ($3000)\n" +
-            "3. Cafe con Leche ($3200)\n" +
-            "4. Capuchino ($5000)\n" +
-            "5. Te ($2000)"
-        );
-        // Convertimos a minúsculas y quitamos espacios extra para evitar errores al escribir
-        let seleccion = menu.trim().toLowerCase();
-
-        // Validamos la selección del usuario
+function seleccionarBebida(seleccion) {
    switch (seleccion) {
             case "1":
             
