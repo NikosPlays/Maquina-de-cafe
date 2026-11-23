@@ -283,3 +283,7 @@ function seleccionarBebida(seleccion) {
         salidaMonedas.textContent = "";
         return;
     }
+
+    let restante = cambio;
+    let textoBilletes = "";
+    let textoMonedas = "";
