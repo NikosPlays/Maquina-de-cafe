@@ -146,6 +146,14 @@ saldo = saldo + billeteIngresado;
   alert("Dinero aceptado: $" + billeteIngresado);
 }
 
+formSaldo.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let billeteIngresado = parseInt(inputSaldo.value);
+  insertarBillete(billeteIngresado);
+  inputSaldo.value = "";
+});
+
+actualizarSaldo();
 
     while (billeteValido === false) {
         // Se pide el billete DENTRO del while para que vuelva a preguntar si falla
