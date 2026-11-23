@@ -180,20 +180,27 @@ function seleccionarBebida(seleccion) {
                     saldo= 0;
                     alert("Preparando Cafe Suave... Su cambio es: $" + darCambio);
                 } else {
-                    alert("Saldo insuficiente o falta inventario para Cafe Suave.);
+                    alert("Saldo insuficiente o falta inventario para Cafe Suave.");
                 }
                 break;
     
     // CAFÉ FUERTE 
 
-    case "Cafe Fuerte":
-        agua = agua - fuerteAgua;      // Resta 150 ml de agua
-        cafe = cafe - fuerteCafe;      // Resta 10g de café
-        vaso--;               // Resta 1 vaso
-        salidaCafe = true;             // Activa la salida de café
-        console.log("Preparando Café Fuerte...");
-        break;
-    
+            case "2":
+                if (saldo >= precioCafeFuerte && agua >= fuerteAgua && cafe >= fuerteCafe && vaso > 0) {
+                agua = agua - fuerteAgua;
+                cafe = cafe - fuerteCafe;
+                vaso--;
+                salidaCafe = true;
+                darCambio = saldo - precioCafeFuerte;
+                saldo = 0;
+                actualizarSaldo();
+                bandejaDispensador.textContent = "Cafe Fuerte";
+                alert("Preparando Cafe Fuerte... Su cambio es: $" + darCambio);
+            } else {
+                alert("Saldo insuficiente o falta inventario para Cafe Fuerte.");
+            }
+            break;
 
     // CAFÉ CON LECHE 
 
