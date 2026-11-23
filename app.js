@@ -344,3 +344,10 @@ function seleccionarBebida(seleccion) {
 
     salidaBilletes.textContent = textoBilletes.trim();
   salidaMonedas.textContent = textoMonedas.trim();
+
+  if (restante > 0) {
+    alert("Faltaron $" + restante + " de cambio por falta de dinero en la máquina.");
+  } else {
+    alert("Su cambio es: $" + cambio);
+  }
+}
