@@ -11,9 +11,9 @@
   --gray-800: #121212;
   --gray-900: #090909;
   /* Colores semánticos */
-  --color-page-bg: var(--gray-200);
+--color-page-bg: var(--gray-200);
   --color-machine: var(--gray-700);
-  --color-machine-light: var(--gray-600);
+  --color-machine-light: var(--gray-400);
   --color-machine-dark: var(--gray-800);
   --color-border: var(--gray-900);
   --color-glass: var(--gray-100);
@@ -21,21 +21,20 @@
   --color-shelf: var(--gray-400);
   --color-shelf-edge: var(--gray-600);
   --color-interior: var(--gray-300);
-  --color-product: var(--gray-600);
+  --color-product: var(--gray-400);
   --color-panel: var(--gray-800);
   --color-text-light: var(--gray-050);
   --color-text-dark: var(--gray-900);
   --color-text-muted: var(--gray-400);
   --color-screen-bg: var(--gray-900);
-  --color-screen-text: var(--gray-100);
-  --color-key: var(--gray-200);
-  --color-key-hover: var(--gray-050);
-  --color-key-active: var(--gray-400);
-  --color-input-bg: var(--gray-100);
+  --color-screen-text: var(--gray-400);
+  --color-key: var(--gray-400);
+  --color-key-hover: var(--gray-500);
+  --color-key-active: var(--gray-600);
+  --color-input-bg: var(--gray-050);
   --color-slot: var(--gray-900);
-  --color-led: var(--gray-050);
+  --color-led: var(--gray-400);
   --color-shadow: var(--gray-900);
-
   /* Medidas */
   --radius-lg: 18px;
   --radius-md: 12px;
