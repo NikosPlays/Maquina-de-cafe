@@ -223,14 +223,22 @@ function seleccionarBebida(seleccion) {
     
         // CAPUCHINO
 
-    case "Capuchino":
-        agua = agua - capuAgua;         // Resta 50 ml de agua
-        leche = leche - capuLeche;     // Resta 100 ml de leche
-        cafe = cafe - capuCafe;         // Resta 8g de café
-        vaso--;                // Resta 1 vaso
-        salidaCafe = true;              // Activa la salida de café
-    console.log("Preparando Capuchino...");
-    break;
+            case "4":
+            if (saldo >= precioCapuchino && agua >= capuAgua && leche >= capuLeche && cafe >= capuCafe && vaso > 0 ) {
+                agua = agua - capuAgua;
+                leche = leche - capuLeche;
+                cafe = cafe - capuCafe;
+                vaso--;
+                salidaCafe = true;
+                darCambio = saldo - precioCapuchino;
+                saldo = 0;
+                actualizarSaldo();
+                bandejaDispensador.textContent = "Capuchino";
+                alert("Preparando Capuchino... Su cambio es: $" + darCambio);
+            } else {
+                alert("Saldo insuficiente o falta inventario para Capuchino.");
+            }
+            break;
     
     // TÉ 
 
