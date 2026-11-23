@@ -153,7 +153,7 @@ formSaldo.addEventListener("submit", function (event) {
   inputSaldo.value = "";
 });
 
-
+actualizarSaldo  ();
 
 
 function insertarBillete() {
