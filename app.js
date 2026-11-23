@@ -323,3 +323,9 @@ function seleccionarBebida(seleccion) {
     inventarioMonedas1000--;
     textoMonedas = textoMonedas + "$1.000 ";
   }
+
+    while (restante >= 500 && inventarioMonedas500 > 0) {
+    restante = restante - 500;
+    inventarioMonedas500--;
+    textoMonedas = textoMonedas + "$500 ";
+  }
