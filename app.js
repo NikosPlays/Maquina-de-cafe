@@ -159,44 +159,6 @@ const bandejaDispensador = document.getElementById("dispenser");
 const botonesBebida = document.querySelectorAll("[data-select]");
 
 
-function insertarBillete() {
-    let billeteValido = false; // Controla si el ciclo sigue o se detiene
-    let billeteIngresado;
-
-    while (billeteValido === false) {
-        // Se pide el billete DENTRO del while para que vuelva a preguntar si falla
-        billeteIngresado = parseInt(prompt("Ingrese el billete o moneda:"));
-
-        if (isNaN(billeteIngresado) || billeteIngresado <= 0) {
-            alert("Por favor, ingrese un número válido.");
-        } 
-        else if (
-            billeteIngresado === rechazarBillete1 || 
-            billeteIngresado === rechazarBillete2 || 
-            billeteIngresado === rechazarBillete3 || 
-            billeteIngresado === rechazarMoneda1
-        ) {
-            alert("Denominación rechazada ($" + billeteIngresado + "). Intente con otro billete o moneda.");
-            // Como billeteValido sigue siendo false, el while vuelve a empezar
-        } 
-        else {
-            alert("Dinero aceptado: $" + billeteIngresado);
-            billeteValido = true; // Cambia a true y rompe el ciclo while
-        }
-    }
-
-    
-}
-
-// Llamar a la función
-insertarBillete();
-
-//Productos
-//Café Suave: 150ml agua + 5g café + 1 vaso.
-//Café Fuerte: 150ml agua + 10g café + 1 vaso.
-//Café con Leche: 75ml agua + 75ml leche + 8g café + 1 vaso.
-//Capuchino: 50ml agua + 100ml leche + 8g café + 1 vaso.
-//Té: 150ml agua + 5g té + 1 vaso.
 
 
 
