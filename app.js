@@ -335,3 +335,12 @@ function seleccionarBebida(seleccion) {
     inventarioMonedas200--;
     textoMonedas = textoMonedas + "$200 ";
   }
+
+    while (restante >= 100 && inventarioMonedas100 > 0) {
+    restante = restante - 100;
+    inventarioMonedas100--;
+    textoMonedas = textoMonedas + "$100 ";
+  }
+
+    salidaBilletes.textContent = textoBilletes.trim();
+  salidaMonedas.textContent = textoMonedas.trim();
