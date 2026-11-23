@@ -240,7 +240,7 @@ function seleccionarBebida(seleccion) {
             }
             break;
     
-            // TÉ 
+    // TÉ 
 
             case "5":
             if (saldo >= precioTe && agua >= teAgua && te >= teGramos && vaso > 0) {
@@ -264,4 +264,9 @@ function seleccionarBebida(seleccion) {
         }
         }
 
+        botonesBebida.forEach(function (boton) {
+        boton.addEventListener("click", function () {
+        seleccionarBebida(boton.dataset.select);
+         });
+    });
  
