@@ -299,3 +299,9 @@ function seleccionarBebida(seleccion) {
     inventarioBilletes20000--;
     textoBilletes = textoBilletes + "$20.000 ";
   }
+
+    while (restante >= 10000 && inventarioBilletes10000 > 0) {
+    restante = restante - 10000;
+    inventarioBilletes10000--;
+    textoBilletes = textoBilletes + "$10.000 ";
+  }
