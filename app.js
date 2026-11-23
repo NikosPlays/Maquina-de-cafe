@@ -351,3 +351,14 @@ function seleccionarBebida(seleccion) {
     alert("Su cambio es: $" + cambio);
   }
 }
+
+    botonDevolverCambio.addEventListener("click", function () {
+        if (saldo > 0) {
+            darCambio = saldo;
+            saldo = 0;
+            actualizarSaldo();
+            entregarCambio(darCambio);
+        } else {
+            alert("No hay saldo para devolver.");
+        }
+        });
