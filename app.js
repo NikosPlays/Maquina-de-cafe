@@ -155,6 +155,9 @@ formSaldo.addEventListener("submit", function (event) {
 
 actualizarSaldo  ();
 
+const bandejaDispensador = document.getElementById("dispenser");
+const botonesBebida = document.querySelectorAll("[data-select]");
+
 
 function insertarBillete() {
     let billeteValido = false; // Controla si el ciclo sigue o se detiene
