@@ -274,5 +274,12 @@ function seleccionarBebida(seleccion) {
     const salidaBilletes = document.getElementById("bill-output");
     const salidaMonedas = document.getElementById("coin-output");
     const botonDevolverCambio = document.querySelector('[data-action="return-change"]');
-     const botonCancelar = document.querySelector('[data-action="cancel"]');
+    const botonCancelar = document.querySelector('[data-action="cancel"]');
  
+
+    function entregarCambio(cambio) {
+        if (cambio <= 0) {
+        salidaBilletes.textContent = "";
+        salidaMonedas.textContent = "";
+        return;
+    }
