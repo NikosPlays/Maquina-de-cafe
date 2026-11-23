@@ -362,3 +362,16 @@ function seleccionarBebida(seleccion) {
             alert("No hay saldo para devolver.");
         }
         });
+
+    botonCancelar.addEventListener("click", function () {
+        bandejaDispensador.textContent = "";
+        inputSaldo.value = "";
+        if (saldo > 0) {
+            darCambio = saldo;
+            saldo = 0;
+            actualizarSaldo();
+            entregarCambio(darCambio);
+        } else {
+            alert("Operación cancelada.");
+        }
+        });
