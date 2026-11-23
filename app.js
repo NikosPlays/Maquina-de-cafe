@@ -240,19 +240,28 @@ function seleccionarBebida(seleccion) {
             }
             break;
     
-    // TÉ 
+            // TÉ 
 
-    case "Te":
-        agua = agua - teAgua;          // Resta 150 ml de agua
-        te = te - teGramos;            // Resta 5g de té
-        vaso--;               // Resta 1 vaso
-        salidaTe = true;               // Activa la salida de té
-    console.log("Preparando Té Caliente...");
-    break;
-    default:
-        console.log("Opción no válida. Por favor, seleccione un producto del menú.");
-        break;
-}
-}
+            case "5":
+            if (saldo >= precioTe && agua >= teAgua && te >= teGramos && vaso > 0) {
+                agua = agua - teAgua;
+                te = te - teGramos;
+                vaso--;
+                salidaTe = true;
+                darCambio = saldo - precioTe;
+                saldo = 0;
+                actualizarSaldo();
+                bandejaDispensador.textContent = "Te";
+                alert("Preparando Te... Su cambio es: $" + darCambio);
+            } else {
+                alert("Saldo insuficiente o falta inventario para Te.");
+            }
+            break;
+
+            default:
+            alert("Opción no válida.");
+            break;
+        }
+        }
 
  
