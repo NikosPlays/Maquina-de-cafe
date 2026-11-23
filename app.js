@@ -131,7 +131,15 @@ function insertarBillete(billeteIngresado) {
   }
 
 
-
+if (
+    billeteIngresado === rechazarBillete1 ||
+    billeteIngresado === rechazarBillete2 ||
+    billeteIngresado === rechazarBillete3 ||
+    billeteIngresado === rechazarMoneda1
+  ) {
+    alert("Denominación rechazada ($" + billeteIngresado + "). Intente con otro billete o moneda.");
+    return;
+  }
 
 
 
@@ -143,23 +151,10 @@ function insertarBillete(billeteIngresado) {
         if (isNaN(billeteIngresado) || billeteIngresado <= 0) {
             alert("Por favor, ingrese un número válido.");
         } 
-        else if (
-            billeteIngresado === rechazarBillete1 || 
-            billeteIngresado === rechazarBillete2 || 
-            billeteIngresado === rechazarBillete3 || 
-            billeteIngresado === rechazarMoneda1
-        ) {
-            alert("Denominación rechazada ($" + billeteIngresado + "). Intente con otro billete o moneda.");
-            // Como billeteValido sigue siendo false, el while vuelve a empezar
-        } 
-        else {
-            alert("Dinero aceptado: $" + billeteIngresado);
-            billeteValido = true; // Cambia a true y rompe el ciclo while
-        }
-    }
+        
 
     
-}
+    }
 
 // Llamar a la función
 insertarBillete();
